@@ -1,5 +1,6 @@
 import game_data
 import random
+import model
 
 
 def draw_account():
@@ -7,7 +8,13 @@ def draw_account():
 
 def versus_accounts(account1, account2):
     if account1['follower_count'] > account2['follower_count']:
-        return "a"
+        return 'a'
     else:
-        return "b"
+        return 'b'
     
+
+def check_answer(player_answer, right_answer):
+    if player_answer == right_answer:
+        return False
+    else:
+        return True
