@@ -1,5 +1,6 @@
 import os
 
+
 logo = """
     __  ___       __             
    / / / (_)___ _/ /_  ___  _____
@@ -12,6 +13,7 @@ logo = """
 /_____/\____/|__/|__/\___/_/     
 """
 
+
 vs = """
  _    __    
 | |  / /____
@@ -20,8 +22,10 @@ vs = """
 |___/____(_)
 """
 
+
 def print_account_stats(account):
     return f"{account['name']}, {account['description']}, from {account['country']}"
+
 
 def print_higher_lower(account1, account2, score):
     os.system('CLS')
@@ -32,6 +36,7 @@ def print_higher_lower(account1, account2, score):
     print(vs)
     print(f"Against B: {print_account_stats(account2)}")
     return input("Who has more followers? Type 'A' or 'B': ")
+
 
 def print_final_score(score):
     os.system('CLS')

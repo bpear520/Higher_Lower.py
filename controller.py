@@ -1,6 +1,7 @@
 import view
 import model
 
+
 def higher_lower():
     account1 = model.draw_account()
     account2 = model.draw_account()
@@ -21,8 +22,7 @@ def higher_lower():
 
 def main():
     higher_lower()
-            
-        
+
 
 if __name__ == '__main__':
     main()
