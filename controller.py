@@ -1,23 +1,43 @@
+from operator import mod
 import view
 import model
+import random
+
+
+def get_correct_answer(account1, account2):
+    if account1['follower_count'] > account2['follower_count']:
+        return 'a'
+    else:
+        return 'b'
+    
+
+def check_answer(player_answer, right_answer):
+    if player_answer == right_answer:
+        return False
+    else:
+        return True
 
 
 def higher_lower():
-    account1 = model.draw_account()
-    account2 = model.draw_account()
+    account1 = random.sample(model.data, 1)[0]
+    account2 = random.sample(model.data, 1)[0]
     score = 0
-    lose_condition = False
-    while lose_condition is not True:
-        player_answer = (view.print_higher_lower(account1, account2, score)).lower()
-        right_answer = model.versus_accounts(account1, account2)
+    playing = True
+
+    while playing:
+        view.print_accounts(account1, account2, score)
+
+        player_answer = input("Who has more followers? Type 'A' or 'B': ").lower()
+        right_answer = get_correct_answer(account1, account2)
         
-        if model.check_answer(player_answer, right_answer):
+        if player_answer == right_answer:
             score += 1
             account1 = account2
-            account2 = model.draw_account()
+            account2 = random.sample(model.data, 1)[0]
         else:
-            lose_condition = True
-    print(view.print_final_score(score))
+            playing = False
+    
+    view.print_final_score(score)
 
 
 def main():
