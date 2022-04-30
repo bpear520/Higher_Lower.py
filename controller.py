@@ -9,13 +9,6 @@ def get_correct_answer(account1, account2):
         return 'a'
     else:
         return 'b'
-    
-
-def check_answer(player_answer, right_answer):
-    if player_answer == right_answer:
-        return False
-    else:
-        return True
 
 
 def higher_lower():
